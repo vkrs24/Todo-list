@@ -1,0 +1,58 @@
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.todo_title {
+  text-align: center;
+  font-size: 250%;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo_content,
+.grid_content {
+  width: 80%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 20vmax 20vmax 10vmax;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2vw;
+  row-gap: 2vh;
+}
+
+.grid_content {
+  margin-bottom: 1vh;
+}
+
+input {
+  font-size: 160%;
+}
+
+.add_btn {
+  font-size: 140%;
+  color: white;
+  background-color: green;
+}
+
+.todo_content .dlt_btn {
+  font-size: 140%;
+  color: white;
+  background-color: red;
+}
+
+.todo_content div {
+  font-size: 150%;
+}
