@@ -5,12 +5,14 @@ function render() {
   for (let i = 0; i < todo_lst.length; i++) {
     let todoObj = todo_lst[i];
     todo_display += `
+    <div class="todo_content">
         <div>${todoObj.msg}</div> 
         <div>${todoObj.dt}</div>
         <button class="dlt_btn" onclick="todo_lst.splice(${i},1); render();">Delete</button>
+      </div>
         `;
   }
-  document.querySelector(".todo_content").innerHTML = todo_display;
+  document.querySelector(".content2").innerHTML = todo_display;
 }
 
 function add() {
