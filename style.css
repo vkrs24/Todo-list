@@ -1,88 +1,137 @@
-html,
-body {
-  overflow-x: hidden;
-  background-color: rgb(20, 115, 107);
-}
-
-body {
+/* Global Styles */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.todo_title {
-  text-align: center;
-  font-size: 250%;
-  color: white;
+html,
+body {
+  overflow-x: hidden;
+  background-color: rgb(20, 115, 107);
+  font-family: Arial, sans-serif;
 }
 
+/* Title */
+.todo_title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: white;
+  margin-top: 20px;
+}
+
+/* Main Content */
 .content {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
 
-.todo_content,
+/* Input Section */
 .grid_content {
   width: 80%;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: 20vmax 20vmax 10vmax;
-  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  column-gap: 2vw;
-  row-gap: 2vh;
-}
-
-.grid_content {
-  margin-bottom: 1vh;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 input {
-  font-size: 160%;
+  font-size: 1.2rem;
+  padding: 8px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.ip_date {
-  font-size: 190%;
+/* Button Styles */
+.add_btn,
+.todo_content .dlt_btn {
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  transition: 0.3s;
 }
 
 .add_btn {
-  font-size: 140%;
-  color: white;
   background-color: green;
 }
 
-.todo_content .dlt_btn {
-  font-size: 140%;
-  color: white;
+.dlt_btn {
   background-color: red;
 }
 
-.todo_content div {
-  font-size: 150%;
+.add_btn:hover {
+  background-color: darkgreen;
 }
 
-@media screen and (max-width: 550px) {
-  .content {
+.dlt_btn:hover {
+  background-color: darkred;
+}
+
+/* Todo Items List */
+.todo_content {
+  color: white;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.todo_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: white;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .todo_title {
+    font-size: 2rem;
+  }
+
+  .grid_content {
     width: 100%;
-    display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .todo_title {
-    margin-top: 5vh;
+
+  input,
+  .add_btn {
+    width: 90%;
   }
 
-  .todo_content,
-  .grid_content {
-    grid-template-columns: 40vw 20vw 15vw;
-  }
-  .todo_content .dlt_btn {
-    font-size: 80%;
-    padding: 2vw;
-  }
   .todo_content {
-    color: rgb(255, 255, 255);
+    width: 90%;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .todo_title {
+    font-size: 1.8rem;
+  }
+
+  .todo_item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .dlt_btn {
+    width: 100%;
+    margin-top: 5px;
   }
 }
