@@ -1,6 +1,7 @@
 html,
 body {
   overflow-x: hidden;
+  background-color: rgb(20, 115, 107);
 }
 
 body {
@@ -12,6 +13,7 @@ body {
 .todo_title {
   text-align: center;
   font-size: 250%;
+  color: white;
 }
 
 .content {
@@ -41,6 +43,10 @@ input {
   font-size: 160%;
 }
 
+.ip_date {
+  font-size: 190%;
+}
+
 .add_btn {
   font-size: 140%;
   color: white;
@@ -55,4 +61,28 @@ input {
 
 .todo_content div {
   font-size: 150%;
+}
+
+@media screen and (max-width: 550px) {
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .todo_title {
+    margin-top: 5vh;
+  }
+
+  .todo_content,
+  .grid_content {
+    grid-template-columns: 40vw 20vw 15vw;
+  }
+  .todo_content .dlt_btn {
+    font-size: 80%;
+    padding: 2vw;
+  }
+  .todo_content {
+    color: rgb(255, 255, 255);
+  }
 }
